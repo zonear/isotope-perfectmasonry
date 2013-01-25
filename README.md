@@ -28,6 +28,21 @@ $('#tiles').isotope({
 3. You're all set
 
 
+## Halp!
+
+**There are huge gaps between my tiles**
+The way Isotope works is that if you don't provide a desired column width for it, it just grabs the first tile and assumes that as the column width. So,
+if you end up with severe case of them gaps, the first element is probably bigger than the rest. In such cases providing the desired width should get
+rid of the symptoms. Like so:
+
+```javascript
+$('#tiles').isotope({
+    layoutMode: "perfectMasonry",
+    perfectMasonry: {
+        columnWidth: 200
+    }
+});
+```
 
 ## Licensing
 

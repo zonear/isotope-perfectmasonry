@@ -56,7 +56,7 @@
 	<header><span>PerfectMasonry</span> extension for <span>Isotope</span></header>
 
 	<div role="main" id="main">
-		<div></div>
+		<div class="big"></div>
 		<div></div>
 		<div class="tall"></div>
 		<div></div>
@@ -86,7 +86,18 @@
 	
 	<script src="js/jquery.isotope.js"></script>
 	<script src="../jquery.isotope.perfectmasonry.js"></script>
-	<script src="js/script.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$('#main').isotope({
+				layoutMode: 'perfectMasonry',
+				perfectMasonry: {
+					columnWidth: 200
+				}
+			});
+			
+		})	
+	</script>
 		
 
 </body>
