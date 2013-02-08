@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
+
 	<title>Perfect Masonry example</title>
 	<style>
 		html {
 			color: rgba(0, 0, 0, 0.4);
 		}
-		
+
 		header {
 			margin-top: 30px;
 			font-size: 40px;
@@ -18,16 +18,19 @@
 			font-weight: bold;
 			color: rgba(0, 0, 0, 0.7);
 		}
-		
+
+		#main {
+			margin: 0 auto;
+		}
 		#main div {
 			float: left;
 			width: 200px;
 			height: 200px;
-			
+
 			font-size: 100px;
 			line-height: 200px;
 			text-align: center;
-			
+
 			background: #bada55;
 			box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.5);
 		}
@@ -37,7 +40,7 @@
 			height: 400px;
 			width: 400px;
 		}
-		
+
 		footer {
 			margin-bottom: 100px;
 			text-align: right;
@@ -52,7 +55,7 @@
 </head>
 <body class="">
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-	
+
 	<header><span>PerfectMasonry</span> extension for <span>Isotope</span></header>
 
 	<div role="main" id="main">
@@ -75,30 +78,33 @@
 		<div></div>
 		<div></div>
 	</div>
-	
+
 	<footer>Copyright 2012 <a href="http://zonear.com">Zonear Ltd.</a></footer>
-	
-	
-	
+
+
+
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	
+
 	<script src="js/jquery.isotope.js"></script>
 	<script src="../jquery.isotope.perfectmasonry.js"></script>
 	<script>
+		// Wait for everything to be ready
 		$(document).ready(function() {
-			
+
+			// Set isotope with perfectMasonry
 			$('#main').isotope({
 				layoutMode: 'perfectMasonry',
 				perfectMasonry: {
-					columnWidth: 200
+					columnWidth: 200,	// Force columns to 200px wide
+					rowHeight: 200		// Force rows to 200px high
 				}
 			});
-			
-		})	
+
+		})
 	</script>
-		
+
 
 </body>
 </html>
