@@ -62,9 +62,10 @@ Use in commercial and personal applications is free.
 View the [commit history](https://github.com/zonear/isotope-perfectmasonry/commits/master) for a complete robust list of changes to the script.
 
 + **v1.1**
-  [2013-08-02](https://github.com/zonear/isotope-perfectmasonry/commit/c6ee341a486e7b8688c6fb66dff2d079379c0932#jquery.isotope.perfectmasonry.js)
+  [2013-08-02](https://github.com/zonear/isotope-perfectmasonry/commit/92af3587f0a8da7f2957a6768c4c836c9b04d6fd)
   - Row height definitions for non-square tiles
   - Container now has width defined, so that it can be centered by CSS (margin auto)
+
 
 + **v1.0**
   [2012-11-13](https://github.com/zonear/isotope-perfectmasonry/commit/c6ee341a486e7b8688c6fb66dff2d079379c0932#jquery.isotope.perfectmasonry.js)
