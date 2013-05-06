@@ -5,7 +5,7 @@
  * left by bigger elements, thus making a perfect brick wall. Profit!
  *
  *
- * @author Zonear Ltd. <contact@zonear.com>
+ * @author Mikko Tikkanen, Zonear Ltd. <contact@zonear.com>
  */
 ;(function($, undefined) {
 
@@ -55,13 +55,10 @@
 
 					// How many columns/rows does the tile span
 					colSpan = Math.ceil(width / properties.columnWidth),
-					colSpan = Math.min(colSpan, properties.cols),
-					rowSpan = Math.ceil(height / properties.rowHeight),
-					rowSpan = Math.min(rowSpan, properties.cols);
+					rowSpan = Math.ceil(height / properties.rowHeight);
 
-
-				// Wider tiles can't fit into the last column
-				var maxCol = properties.cols + 1 - colSpan;
+				// Wider tiles can't fit into the last column (though keep it still at least one column wide)
+				var maxCol = Math.max(properties.cols + 1 - colSpan, 1);
 
 				// Loop through rows
 				var y = -1;
@@ -80,7 +77,6 @@
 						// If the tile is not free, move to the next one immediately
 						var tile = properties.grid[y][x];
 						if(tile) { continue; }
-
 
 						// Tiles spanning to multiple rows/columns - Check if it'll fit
 						if(colSpan > 1 || rowSpan > 1) {
@@ -128,7 +124,7 @@
 					}
 				}
 
-				// If we got all the way down to here, the element can't fit - Hide it
+				// If we got all the way down to here, the element doesn't fit - Hide it
 				instance._pushPosition($this, -9999, -9999);
 			});
 		},
