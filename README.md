@@ -1,7 +1,7 @@
 PerfectMasonry extension for Isotope
 ========
 
-**Extension for creating perfect masonry layouts with Isotope.**
+**Extension for creating perfect masonry layouts with Isotope. Now even with pixel perfect liquid layouts!**
 
 
 ## Prerequisites
@@ -28,6 +28,25 @@ $('#tiles').isotope({
 3. You're all set
 
 
+## Options
+```javascript
+    ....
+    layoutMode: "perfectMasonry",
+	perfectMasonry: {
+        layout: "vertical",      // Set layout as vertical/horizontal (default: vertical)
+        columnWidth: 200,        // Set/prefer specific column width (liquid layout tries to prefer said width)
+        rowHeight: 200,          // Set/prefer specific row height (liquid layout tries to prefer said height)
+        
+        liquid: true,            // Set layout as liquid (default: false)
+        cols: 3,                 // Force to have x columns (default: null)
+        rows: 3,                 // Force to have y rows (default: null)
+        minCols: 3,              // Set min col count (default: 1)
+        minRows: 3,              // Set min row count (default: 1)
+        maxCols: 5,              // Set max col count (default: 9999)
+        maxRows: 4               // Set max row count (default: 9999)
+    }
+```
+
 
 ## Halp!
 
@@ -49,6 +68,7 @@ $('#tiles').isotope({
 });
 ```
 
+
 ## Licensing
 
 Use in commercial and personal applications is free.
@@ -61,6 +81,12 @@ Use in commercial and personal applications is free.
 
 View the [commit history](https://github.com/zonear/isotope-perfectmasonry/commits/master) for a complete robust list of changes to the script.
 
++ **v1.3**
+  [2013-02-07](https://github.com/zonear/isotope-perfectmasonry/commit/92af3587f0a8da7f2957a6768c4c836c9b04d6fd)
+  - Added the capability for horizontal layouts
+  - Added liquid layouts with variable tile sizes, plus some extra options for liquid layouts
+
+
 + **v1.1**
   [2013-08-02](https://github.com/zonear/isotope-perfectmasonry/commit/92af3587f0a8da7f2957a6768c4c836c9b04d6fd)
   - Row height definitions for non-square tiles
@@ -70,3 +96,4 @@ View the [commit history](https://github.com/zonear/isotope-perfectmasonry/commi
 + **v1.0**
   [2012-11-13](https://github.com/zonear/isotope-perfectmasonry/commit/c6ee341a486e7b8688c6fb66dff2d079379c0932#jquery.isotope.perfectmasonry.js)
   - Public release
+

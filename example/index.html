@@ -6,20 +6,41 @@
 
 	<title>Perfect Masonry example</title>
 	<style>
-		html {
+		html, body {
+			height: 100%;
 			color: rgba(0, 0, 0, 0.4);
+		}
+		body { margin: 50px; }
+		a {
+			font-weight: bold;
+			color: rgba(0, 0, 0, 0.7);
+			text-decoration: none;
 		}
 
 		header {
-			margin-top: 30px;
+			padding-top: 30px;
 			font-size: 40px;
 		}
-		header span {
-			font-weight: bold;
-			color: rgba(0, 0, 0, 0.7);
+		header div {
+			float: right;
+			margin: -0.2em 0 0.1em 0;
+		}
+		button, label { font-size: 18px; cursor: pointer; }
+		button {
+			margin: 0;
+			padding: 0.5em 1em;
+			font-family: inherit;
+			color: inherit;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			background: none;
+		}
+		button.active {
+			color: #fff;
+			background: #bada55;
 		}
 
 		#main {
+			min-height: 100%;
 			margin: 0 auto;
 		}
 		#main div {
@@ -42,22 +63,22 @@
 		}
 
 		footer {
-			margin-bottom: 100px;
+			padding-bottom: 100px;
 			text-align: right;
 			font-size: 30px;
-		}
-		footer a {
-			text-decoration: none;
-			font-weight: bold;
-			color: rgba(0, 0, 0, 0.7);
 		}
 	</style>
 </head>
 <body class="">
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-	<header><span>PerfectMasonry</span> extension for <span>Isotope</span></header>
-
+	<header>
+		<a href="https://github.com/zonear/isotope-perfectmasonry" target="_blank">PerfectMasonry</a> extension for <a href="http://isotope.metafizzy.co/" target="_blank">Isotope</a>
+		<div>
+			<label><input id="liquid" type="checkbox"> Liquid</label> <button id="vertical" class="active" style="border-right: none;">Vertical</button><button id="horizontal" style="border-left: none;">Horizontal</button>
+		</div>
+	</header>
+	
 	<div role="main" id="main">
 		<div class="big"></div>
 		<div></div>
@@ -78,8 +99,8 @@
 		<div></div>
 		<div></div>
 	</div>
-
-	<footer>Copyright 2012 <a href="http://zonear.com">Zonear Ltd.</a></footer>
+	
+	<footer>Copyright 2012 <a href="http://zonear.com" target="_blank">Zonear Ltd.</a></footer>
 
 
 
@@ -87,21 +108,58 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-	<script src="js/jquery.isotope.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
 	<script src="../jquery.isotope.perfectmasonry.js"></script>
 	<script>
 		// Wait for everything to be ready
 		$(document).ready(function() {
-
-			// Set isotope with perfectMasonry
-			$('#main').isotope({
+			var opt = {
 				layoutMode: 'perfectMasonry',
 				perfectMasonry: {
+					layout: 'vertical',
+					liquid: false,
 					columnWidth: 200,	// Force columns to 200px wide
 					rowHeight: 200		// Force rows to 200px high
 				}
+			};
+			
+			// Set default isotope
+			$('#main').isotope(opt);
+			
+			
+			
+			// Set button states
+			$('button').click(function(e) {
+				$('button').removeClass('active');
+				$(this).addClass('active');
 			});
-
+			
+			// Horizontal
+			$('#horizontal').click(function(e) {
+				$('#main').isotope('destroy');
+				opt.perfectMasonry.layout = 'horizontal';
+				opt.perfectMasonry.liquid = $('#liquid').is(':checked');
+				$('#main').isotope(opt);
+			});
+			
+			// Vertical
+			$('#vertical').click(function(e) {
+				$('#main').isotope('destroy');
+				opt.perfectMasonry.layout = 'vertical';
+				opt.perfectMasonry.liquid = $('#liquid').is(':checked');
+				$('#main').isotope(opt);
+			});
+			
+			// Liquid
+			$('#liquid').click(function(e) {
+				$('#main').isotope('destroy');
+				$('#main div').css({ // Make sure the tiles are back in their original size when liquid is switched off
+					height: '',
+					width: ''
+				});
+				opt.perfectMasonry.liquid = $('#liquid').is(':checked');
+				$('#main').isotope(opt);
+			});
 		})
 	</script>
 
