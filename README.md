@@ -82,7 +82,7 @@ Use in commercial and personal applications is free.
 View the [commit history](https://github.com/zonear/isotope-perfectmasonry/commits/master) for a complete robust list of changes to the script.
 
 + **v1.3**
-  [2013-02-07](https://github.com/zonear/isotope-perfectmasonry/commit/55b5e6528d3830c36dfcd0ad5f424ab9aaaef665)
+  [2013-03-07](https://github.com/zonear/isotope-perfectmasonry/commit/55b5e6528d3830c36dfcd0ad5f424ab9aaaef665)
   - Added the capability for horizontal layouts
   - Added liquid layouts with variable tile sizes, plus some extra options for liquid layouts
 
