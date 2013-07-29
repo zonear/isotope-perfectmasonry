@@ -22,14 +22,15 @@
  * 		}
  * 	});
  *
- *
+ * 
  * @author Mikko Tikkanen, Zonear Ltd. <contact@zonear.com>
  */
 ;(function($, undefined) {
-	var isotope = null;
-	var $context = null;
-	var $container = null;
-	var isFirstRun = true;
+	var version = '1.2.1';
+	var isotope = null,
+		$context = null,
+		$container = null,
+		isFirstRun = true;
 	
 	$.extend($.Isotope.prototype, {
 
