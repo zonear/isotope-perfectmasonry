@@ -57,7 +57,7 @@
 			}
 			
 			// For liquid layout, replace default resize handler with forced relayout (outside firstRun as Isotope grid can be destroyed and created on the fly)
-			if(isLiquid && $.data(window, 'events').smartresize) {
+			if(isLiquid && $._data(window, 'events').smartresize) {
 				$(window).off('smartresize.isotope');
 				$(window).on('resize.isotope.perfectmasonry', function() {
 					if(!$context.hasClass('isotope')) { return; }
