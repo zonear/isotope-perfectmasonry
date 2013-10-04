@@ -207,6 +207,11 @@
 				// If we got all the way down to here, the element doesn't fit - Hide it
 				instance._pushPosition($this, -9999, -9999);
 			});
+			
+			// Set row & column count to container
+			var rows = (isVertical ? properties.grid.length : properties.grid[0].length),
+				cols = (isVertical ? properties.grid[0].length : properties.grid.length);
+			$(this.element.context).attr('data-isotope-rows', rows).attr('data-isotope-cols', cols);
 		},
 		
 		
