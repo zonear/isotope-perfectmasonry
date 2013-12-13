@@ -40,6 +40,7 @@
 		 * Runs before any layout change
 		 * -------------------------------------------------------------------------------------------------------- */
 		_perfectMasonryReset: function() {
+			this.options.perfectMasonry = this.options.perfectMasonry|| {};
 			var isVertical = this.options.perfectMasonry.layout != 'horizontal',
 				isLiquid = this.options.perfectMasonry.liquid == true;
 			
@@ -118,6 +119,7 @@
 			
 			// Create first set of the grid
 			properties.grid = new Array(properties[(isVertical ? 'cols' : 'rows')]);
+			if(!properties.grid || !properties.grid.length) { return; }
 			
 			// Loop each element
 			$elems.each(function() {
@@ -209,8 +211,8 @@
 			});
 			
 			// Set row & column count to container
-			var rows = (isVertical ? properties.grid.length : properties.grid[0].length),
-				cols = (isVertical ? properties.grid[0].length : properties.grid.length);
+			var rows = (isVertical ? properties.grid.length : properties.grid[0] && properties.grid[0].length),
+				cols = (isVertical ? properties.grid[0] && properties.grid[0].length : properties.grid.length);
 			$(this.element.context).attr('data-isotope-rows', rows).attr('data-isotope-cols', cols);
 		},
 		
