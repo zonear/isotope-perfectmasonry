@@ -29,10 +29,10 @@
 	var version = '1.2.1';
 	var isotope = null,
 		$context = null,
-		$container = null,
-		isFirstRun = true;
+		$container = null;
 	
 	$.extend($.Isotope.prototype, {
+		isFirstRun: true,
 
 		/**
 		 * Reset layout properties
@@ -45,8 +45,8 @@
 				isLiquid = this.options.perfectMasonry.liquid == true;
 			
 			// Do things on a first run
-			if(isFirstRun) {
-				isFirstRun = false;
+			if(this.isFirstRun) {
+				this.isFirstRun = false;
 				isotope = this;
 				$context = $(this.element.context);
 				$container = $context.parent();
