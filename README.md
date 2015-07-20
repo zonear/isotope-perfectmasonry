@@ -1,13 +1,13 @@
 PerfectMasonry extension for Isotope
 ========
 
-**Extension for creating perfect masonry layouts with Isotope. Now even with pixel perfect liquid layouts!**
+**Extension for creating perfect masonry layouts with Isotope 1.x. Now even with pixel perfect liquid layouts!**
 
 
 ## Prerequisites
 
 * jQuery javascript library (http://jquery.com/)
-* Isotope jQuery plugin (http://isotope.metafizzy.co/)
+* Isotope jQuery plugin version 1.x (http://isotope.metafizzy.co/)
 
 
 
